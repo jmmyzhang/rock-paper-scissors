@@ -13,3 +13,10 @@ function getComputerChoice() {
 function getHumanChoice() {
     return prompt("Let's play Rock Paper Scissors!", "rock, paper, scissors");
 }
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound() {
+    
+}
