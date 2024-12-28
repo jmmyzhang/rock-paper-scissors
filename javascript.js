@@ -11,5 +11,5 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    return prompt("Let's play Rock Paper Scissors!");
+    return prompt("Let's play Rock Paper Scissors!", "rock, paper, scissors");
 }
