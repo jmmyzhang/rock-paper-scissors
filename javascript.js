@@ -2,12 +2,14 @@ function getComputerChoice() {
     let num = Math.floor(Math.random() * 3);
     switch(num) {
         case 0:
-            return "Rock";
+            return "rock";
         case 1:
-            return "Paper";
+            return "paper";
         case 2:
-            return "Scissors";
+            return "scissors";
     }
 }
 
-console.log(getComputerChoice())
+function getHumanChoice() {
+    return prompt("Let's play Rock Paper Scissors!");
+}
