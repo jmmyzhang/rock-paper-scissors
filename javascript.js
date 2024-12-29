@@ -10,13 +10,60 @@ function getComputerChoice() {
     }
 }
 
+
 function getHumanChoice() {
-    return prompt("Let's play Rock Paper Scissors!", "rock, paper, scissors");
+    return (prompt("Let's play Rock Paper Scissors!",
+         "rock, paper, scissors").toLowerCase());
 }
+
 
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound() {
-    
+
+function playRound(humanChoice, computerChoice) {
+    switch(humanChoice) {
+        
+        case "rock":
+            if (computerChoice == "rock") {
+                console.log("Tie!");
+            } else if (computerChoice == "paper") {
+                console.log("You lose! Paper beats Rock");
+                computerScore += 1;
+            } else if (computerChoice == "scissors") {
+                console.log("You win! Rock beats Scissors");
+                humanScore += 1;
+            }
+            break;
+        
+        case "paper":
+            if (computerChoice == "rock") {
+                console.log("You win! Paper beats Rock");
+                humanScore += 1;
+            } else if (computerChoice == "paper") {
+                console.log("Tie!");
+            } else if (computerChoice == "scissors") {
+                console.log("You lose! Scissors beats Paper");
+                computerScore += 1;
+            }
+            break;
+        
+        case "scissors":
+            if (computerChoice == "rock") {
+                console.log("You lose! Rock beats Scissors");
+                computerScore += 1;
+            } else if (computerChoice == "paper") {
+                console.log("You win! Scissors beats Paper");
+                humanScore += 1;
+            } else if (computerChoice == "scissors") {
+                console.log("Tie!");
+            }
+            break;
+    }
+
+
 }
+
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
