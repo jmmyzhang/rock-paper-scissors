@@ -1,3 +1,6 @@
+const btn = document.querySelector("button");
+btn.addEventListener("click", playRound(btn.id));
+
 function getComputerChoice() {
     let num = Math.floor(Math.random() * 3);
     switch(num) {
@@ -10,13 +13,8 @@ function getComputerChoice() {
     }
 }
 
-let humanScore = 0;
-let computerScore = 0;
-
-
-
-
-function playRound(humanChoice, computerChoice) {
+function playRound(humanChoice) {
+    computerChoice = getComputerChoice();
     switch(humanChoice) {
             
         case "rock":
@@ -24,32 +22,26 @@ function playRound(humanChoice, computerChoice) {
                 console.log("Tie!");
             } else if (computerChoice == "paper") {
                 console.log("You lose! Paper beats Rock");
-                computerScore += 1;
             } else if (computerChoice == "scissors") {
                 console.log("You win! Rock beats Scissors");
-                humanScore += 1;
             }
             break;
             
         case "paper":
             if (computerChoice == "rock") {
                 console.log("You win! Paper beats Rock");
-                humanScore += 1;
             } else if (computerChoice == "paper") {
                 console.log("Tie!");
             } else if (computerChoice == "scissors") {
                 console.log("You lose! Scissors beats Paper");
-                computerScore += 1;
             }
             break;
             
         case "scissors":
             if (computerChoice == "rock") {
                 console.log("You lose! Rock beats Scissors");
-                computerScore += 1;
             } else if (computerChoice == "paper") {
                 console.log("You win! Scissors beats Paper");
-                humanScore += 1;
             } else if (computerChoice == "scissors") {
                 console.log("Tie!");
             }
