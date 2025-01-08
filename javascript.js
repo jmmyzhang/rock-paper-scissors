@@ -1,5 +1,15 @@
-const btn = document.querySelector("button");
-btn.addEventListener("click", playRound(btn.id));
+const btns = document.querySelector("#btns");
+const score = document.querySelector("#score");
+const roundwin = document.querySelector("#roundwin");
+const winner = document.querySelector("#winner");
+
+let humanScore = 0;
+let computerScore = 0;
+
+btns.addEventListener("click", (e) => {
+    let target = e.target;
+    playRound(target.id);
+});
 
 function getComputerChoice() {
     let num = Math.floor(Math.random() * 3);
@@ -19,31 +29,31 @@ function playRound(humanChoice) {
             
         case "rock":
             if (computerChoice == "rock") {
-                console.log("Tie!");
+                roundwin.innerText = "Tie!";
             } else if (computerChoice == "paper") {
-                console.log("You lose! Paper beats Rock");
+                roundwin.innerText = "You lose! Paper beats Rock";
             } else if (computerChoice == "scissors") {
-                console.log("You win! Rock beats Scissors");
+                roundwin.innerText = "You win! Rock beats Scissors";
             }
             break;
             
         case "paper":
             if (computerChoice == "rock") {
-                console.log("You win! Paper beats Rock");
+                roundwin.innerText = "You win! Paper beats Rock";
             } else if (computerChoice == "paper") {
-                console.log("Tie!");
+                roundwin.innerText = "Tie!";
             } else if (computerChoice == "scissors") {
-                console.log("You lose! Scissors beats Paper");
+                roundwin.innerText = "You lose! Scissors beats Paper";
             }
             break;
             
         case "scissors":
             if (computerChoice == "rock") {
-                console.log("You lose! Rock beats Scissors");
+                roundwin.innerText = "You lose! Rock beats Scissors";
             } else if (computerChoice == "paper") {
-                console.log("You win! Scissors beats Paper");
+                roundwin.innerText = "You win! Scissors beats Paper";
             } else if (computerChoice == "scissors") {
-                console.log("Tie!");
+                roundwin.innerText = "Tie!";
             }
             break;
     }
