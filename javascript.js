@@ -32,29 +32,36 @@ function playRound(humanChoice) {
                 roundwin.innerText = "Tie!";
             } else if (computerChoice == "paper") {
                 roundwin.innerText = "You lose! Paper beats Rock";
+                computerScore += 1;
             } else if (computerChoice == "scissors") {
                 roundwin.innerText = "You win! Rock beats Scissors";
+                humanScore += 1;
             }
             break;
             
         case "paper":
             if (computerChoice == "rock") {
                 roundwin.innerText = "You win! Paper beats Rock";
+                humanScore += 1;
             } else if (computerChoice == "paper") {
                 roundwin.innerText = "Tie!";
             } else if (computerChoice == "scissors") {
                 roundwin.innerText = "You lose! Scissors beats Paper";
+                computerScore += 1;
             }
             break;
             
         case "scissors":
             if (computerChoice == "rock") {
                 roundwin.innerText = "You lose! Rock beats Scissors";
+                computerScore += 1;
             } else if (computerChoice == "paper") {
                 roundwin.innerText = "You win! Scissors beats Paper";
+                humanScore += 1;
             } else if (computerChoice == "scissors") {
                 roundwin.innerText = "Tie!";
             }
             break;
     }
+    score.innerText = `Score: ${humanScore} - ${computerScore}`
 }
