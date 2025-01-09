@@ -1,15 +1,30 @@
 const btns = document.querySelector("#btns");
+const rps = document.querySelector("#rps");
+const again = document.querySelector("#again");
 const score = document.querySelector("#score");
 const roundwin = document.querySelector("#roundwin");
 const winner = document.querySelector("#winner");
 
+
 let humanScore = 0;
 let computerScore = 0;
 
-btns.addEventListener("click", (e) => {
+
+rps.addEventListener("click", (e) => {
     let target = e.target;
     playRound(target.id);
 });
+
+
+again.addEventListener("click", (e) => {
+    humanScore = 0;
+    computerScore = 0;
+    score.innerText = "Score: 0 - 0"
+    rps.style.display = "block";
+    again.style.display = "none";
+    winner.innerText = ""
+});
+
 
 function getComputerChoice() {
     let num = Math.floor(Math.random() * 3);
@@ -22,6 +37,7 @@ function getComputerChoice() {
             return "scissors";
     }
 }
+
 
 function playRound(humanChoice) {
     computerChoice = getComputerChoice();
@@ -64,4 +80,11 @@ function playRound(humanChoice) {
             break;
     }
     score.innerText = `Score: ${humanScore} - ${computerScore}`
+
+    if (humanScore === 5 || computerScore === 5) {
+        rps.style.display = "none";
+        again.style.display = "block";
+        
+        winner.innerText = (humanScore === 5) ? "You win!" : "You lose!";
+    }
 }
