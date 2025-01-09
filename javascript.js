@@ -20,7 +20,7 @@ again.addEventListener("click", (e) => {
     humanScore = 0;
     computerScore = 0;
     score.innerText = "Score: 0 - 0"
-    rps.style.display = "block";
+    rps.style.display = "flex";
     again.style.display = "none";
     roundwin.innerText = "Welcome to Rock Paper Scissors!\
                         Press any button to begin"
