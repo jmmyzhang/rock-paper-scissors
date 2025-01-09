@@ -22,6 +22,8 @@ again.addEventListener("click", (e) => {
     score.innerText = "Score: 0 - 0"
     rps.style.display = "block";
     again.style.display = "none";
+    roundwin.innerText = "Welcome to Rock Paper Scissors!\
+                        Press any button to begin"
     winner.innerText = ""
 });
 
