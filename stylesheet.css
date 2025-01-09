@@ -43,6 +43,10 @@ button:hover {
     background-color: #cccccc;
 }
 
+button:active {
+    background-color: #b5b5b5;
+}
+
 #again {
     display: none;
 }
